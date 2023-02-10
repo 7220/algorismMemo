@@ -1,0 +1,88 @@
+문자열 뒤집기
+
+function solution(my_string) {
+  let newString = ''
+  for (let i = my_string.length - 1; i >= 0; i--) {
+      newString += my_string[i]
+  }
+  return newString
+}
+
+function solution(my_string) {
+  return my_string.split('').reverse().join('');
+}
+
+filter
+
+1 중복된 숫자 개수
+
+function solution(array, n) {
+  const arrayList = []
+  for (let i = 0; i < array.length; i++) {
+      if (array[i] === n) {
+          arrayList.push(array[i])
+      }
+  }
+  return arrayList.length
+}
+
+function solution(array, n) {
+  return array.filter(v=>v===n).length;
+}
+
+2 짝수 홀수 개수
+
+function solution(num_list) {
+  const newList1 = []
+  const newList2 = []
+  const newList3 = []
+  for (let i = 0; i < num_list.length; i++) {
+      if (num_list[i] % 2 === 0) {
+          newList1.push(num_list[i])
+      }
+      if (num_list[i] % 2 !== 0) {
+          newList2.push(num_list[i])
+      }
+  }
+  newList3.push(newList1.length)
+  newList3.push(newList2.length)
+  return newList3
+}
+
+function solution(num_list) {
+  return [
+    num_list.filter((num) => num % 2 === 0).length,
+    num_list.filter((num) => num % 2 === 1).length,
+  ];
+}
+
+~~ tilt 양꼬치
+
+function solution(n, k) {
+  const aif = Math.floor(n / 10)
+  const result = n * 12000 + k * 2000
+  if (aif >= 1) {
+      return result - aif * 2000
+  }
+  return result
+}
+
+function solution(n, k) {
+    k-=~~(n/10);
+    if (k < 0) k = 0;
+    return n*12000+k*2000;
+}
+
+map 배열 원소의 길이
+
+function solution(strlist) {
+  const newList = []
+  for (let i = 0; i < strlist.length; i++) {
+      newList.push(strlist[i].length)
+  }
+  return newList
+}
+
+function solution(strlist) {
+    return strlist.map((el) => el.length)
+}
