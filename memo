@@ -1,3 +1,24 @@
+최댓값 만들기
+
+function solution(numbers) {
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = 0; j < numbers.length; j++) {
+      if (numbers[j] < numbers[j + 1]) {
+        let b = numbers[j]
+        numbers[j] = numbers[j + 1]
+        numbers[j + 1] = b
+      } 
+    }
+  }
+  return numbers[0] * numbers[1];
+}
+
+function solution(numbers) {
+  numbers.sort((a,b)=>b-a);
+  return numbers[0]*numbers[1];
+}
+
+
 문자열 뒤집기
 
 function solution(my_string) {
