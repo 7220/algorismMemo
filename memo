@@ -1,3 +1,65 @@
+인덱스바꾸기
+
+function solution(my_string, num1, num2) {
+    let string = []
+    for (let i = 0; i < my_string.length; i++) {
+        string.push(my_string[i])
+    }
+    let a = string[num1]
+    string[num1] = string[num2]
+    string[num2] = a
+    return string.join('')
+}
+
+function solution(my_string, num1, num2) {
+    my_string = my_string.split('');
+    [my_string[num1], my_string[num2]] = [my_string[num2], my_string[num1]];
+    return my_string.join('');
+}
+
+직각삼각형 출력하기(repeat)
+
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', function (line) {
+    input = line.split(' ');
+}).on('close', function () {
+    const n = Number(input[0]);
+    for (let i = 1; i <= n; i++) {
+        let row = ''
+        for (let j = 1; j <= i; j++) {
+            row += '*'
+        }
+        console.log(row)
+    }
+});
+
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', function (line) {
+    input = line.split(' ');
+}).on('close', function () {
+    solution(Number(input[0]));
+});
+
+function solution(n) {
+    for(let i = 1; i <= n; i++) {
+        console.log('*'.repeat(i));
+    }
+}
+
 암호 해독
 
 function solution(cipher, code) {
@@ -248,6 +310,23 @@ function solution(s1, s2) {
 function solution(s1, s2) {
     const intersection = s1.filter((x) => s2.includes(x));
     return intersection.length;
+}
+
+4 n의 배수 고르기
+
+function solution(n, numlist) {
+    const list = []
+
+    for (let i = 0; i < numlist.length; i++) {
+        if (numlist[i] % n === 0) {
+            list.push(numlist[i])
+        }
+    }
+    return list
+}
+
+function solution(n, numlist) {
+    return numlist.filter(num => num % n === 0);
 }
 
 ~~ tilt 양꼬치
