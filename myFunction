@@ -1,0 +1,33 @@
+function low(string) {
+  let newString = ''
+  for (let i = 0; i < string.length; i++) {
+      let a = string.charCodeAt(i)
+      if(a >= 65 && a <= 90) {
+          newString += String.fromCharCode(a + 32)
+      } else {
+        newString += String.fromCharCode(a)
+      }
+  }
+  return newString
+}
+
+function bubble(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j].charCodeAt() > arr[j + 1].charCodeAt()) {
+        let a = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = a
+      }
+    }
+  }
+  return arr.join('')
+}
+
+function sp(string) {
+  const list = []
+  for (let i = 0; i < string.length; i++){
+    list.push(string[i])
+  }
+  return list
+}
