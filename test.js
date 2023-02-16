@@ -1,15 +1,10 @@
-function combination(n, r) {
-  let numerator = 1;
-  for (let i = n; i > n - r; i--) {
-    numerator *= i;
+function solution(numbers, k) {
+  let count = 1
+  for (let i = 0; ; i += 2) {
+    i %= numbers.length
+    const a = numbers[i]
+    if (count === k) return a
+    count++
   }
-  let denominator = 1;
-  for (let i = 1; i <= r; i++) {
-    denominator *= i;
-  }
-  return numerator / denominator;
 }
-
-function solution(balls, share) {
-  return combination(balls, share);
-}
+console.log(solution([1,2,3,4], 2))
