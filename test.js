@@ -1,10 +1,17 @@
-function solution(numbers, k) {
-  let count = 1
-  for (let i = 0; ; i += 2) {
-    i %= numbers.length
-    const a = numbers[i]
-    if (count === k) return a
-    count++
+function solution(n) {
+  const list = []
+
+  for (let i = 2; i <= n; i++) {
+    while (n % i === 0) {
+      list.push(i)
+      n /= i
+    }
   }
+
+  const set = new Set(list)
+  
+  return [...set]
 }
-console.log(solution([1,2,3,4], 2))
+
+
+console.log(solution("420"))
