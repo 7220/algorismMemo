@@ -1,17 +1,19 @@
-function solution(n) {
-  const list = []
+function solution(chicken) {
+  let order = 0;
+  let coupon = 0
+  let bonusChicken = 0
 
-  for (let i = 2; i <= n; i++) {
-    while (n % i === 0) {
-      list.push(i)
-      n /= i
+  for (let i = 1; i <= chicken; i++ ) {
+    order++
+    coupon++
+    if (coupon !== 0 && coupon % 10 === 0) {
+      coupon++
+      bonusChicken++
     }
   }
-
-  const set = new Set(list)
-  
-  return [...set]
+  return bonusChicken
 }
 
 
-console.log(solution("420"))
+console.log(solution(1081))
+
