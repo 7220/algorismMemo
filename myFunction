@@ -1,3 +1,67 @@
+function findMaxDuplicateCount(arr) {
+  const count = {};
+  let maxCount = 0;
+
+  arr.forEach((item) => {
+    if (count[item]) {
+      count[item]++;
+    } else {
+      count[item] = 1;
+    }
+    if (count[item] > maxCount) {
+      maxCount = count[item];
+    }
+  });
+
+  return maxCount;
+}
+const arr2 = [1, 2, 3, 2, 2, 4, 5, 5, 5, 5];
+const maxDuplicateCount = findMaxDuplicateCount(arr2);
+console.log(maxDuplicateCount); // 4
+
+
+function MostFrequent(arr) {
+  // 배열 요소들의 빈도를 저장할 객체 생성
+  const freq = {};
+
+  // 배열 요소들의 빈도 계산
+  for (let i = 0; i < arr.length; i++) {
+    freq[arr[i]] = (freq[arr[i]] || 0) + 1;
+  }
+
+  // 빈도가 가장 높은 요소 찾기
+  let maxFreq = 0;
+  let mostFrequent;
+
+  for (const key in freq) {
+    if (freq[key] > maxFreq) {
+      maxFreq = freq[key];
+      mostFrequent = key;
+    }
+  }
+
+  return mostFrequent;
+}
+
+// 예시
+const arr1 = [1, 2, 3, 3, 3, 4, 4, 5, 5];
+console.log(findMostFrequent(arr1)); // 3
+
+function near(numlist, n) {
+  return numlist.sort((a, b) => {
+    const A = Math.abs(n - a)
+    const B = Math.abs(n - b)
+    if (A !== B) return A - B
+    return b - a
+    // n에 가까운 값으로 정렬 (같을경우 큰 수가 먼저)
+  });
+}
+
+function filter1(scores) {
+  const score = scores.map(([eng, math]) => eng + math)
+  return score.map(s1 => score.filter(s2 => s2 > s1).length + 1)
+}
+
 function low(string) {
   let newString = ''
   for (let i = 0; i < string.length; i++) {
