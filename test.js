@@ -1,11 +1,10 @@
-function solution(s) {
-  const string = s.split(' ')
-  console.log(string)
+function solution(strings, n) {
+  return strings.sort((a, b) => {
+    const A = a.charAt(n)
+    const B = b.charAt(n)
+    return A < B ? -1 : A === B ? a.localeCompare(b) : 1
+    }
+  )
 }
 
-console.log(solution("try hello world"))
-
-
-
-
-
+console.log(solution(["abce", "abcd", "cdx"], 2))
