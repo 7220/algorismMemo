@@ -1,10 +1,9 @@
-function solution(strings, n) {
-  return strings.sort((a, b) => {
-    const A = a.charAt(n)
-    const B = b.charAt(n)
-    return A < B ? -1 : A === B ? a.localeCompare(b) : 1
-    }
-  )
+function solution(nums) {
+  const a = nums.length / 2
+  const set = new Set(nums)
+  const b = [...set].length
+  if (a > b) return b
+  return a
 }
 
-console.log(solution(["abce", "abcd", "cdx"], 2))
+console.log(solution([3,1,2,3]))
