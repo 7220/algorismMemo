@@ -1,9 +1,9 @@
-function solution(nums) {
-  const a = nums.length / 2
-  const set = new Set(nums)
-  const b = [...set].length
-  if (a > b) return b
-  return a
+function solution(n) {
+  const list = []
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) list.push(i)
+  }
+  console.log(list)
 }
 
-console.log(solution([3,1,2,3]))
+console.log(solution(10))
