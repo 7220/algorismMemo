@@ -1,0 +1,59 @@
+// 요일 구하기
+
+function solution(a, b) {
+  const days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // 각 월별 일수
+  const weekdays = ['FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED', 'THU']; // 요일별 문자열
+  
+  let totalDays = b; // 일수를 더해나갈 변수
+  
+  // 입력받은 월 이전 월까지의 일수를 더함
+  for (let i = 0; i < a - 1; i++) {
+      totalDays += days[i];
+  }
+  
+  // 요일 계산
+  const weekdayIndex = (totalDays % 7) - 1;
+  if (weekdayIndex === -1) {
+      return weekdays[6]; // 나머지가 0일 경우 마지막 요일(토요일) 반환
+  } else {
+      return weekdays[weekdayIndex];
+  }
+}
+
+function solution(a, b) {
+  const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  const date = new Date(2016, a - 1, b);
+  return days[date.getDay()];
+}
+
+
+// 약수의 개수와 덧셈
+
+function solution(left, right) {
+  let result = 0
+  for (let i = left; i <= right; i++) {
+    let count = 0
+    let num = left
+    for (let j = 0; j <= right; j++) {
+      if (i % j === 0) {
+        count++
+        num = i
+      }
+    }
+    if (count % 2 === 0) result += num
+    else result -= num
+  }
+  return result
+}
+
+function solution(left, right) {
+  var answer = 0;
+  for (let i = left; i <= right; i++) {
+      if (Number.isInteger(Math.sqrt(i))) { // 제곱근이 정수면 약수는 홀수개
+          answer -= i;
+      } else {
+          answer += i;
+      }
+  }
+  return answer;
+}

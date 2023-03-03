@@ -1,9 +1,5 @@
-function solution(n) {
-  const list = []
-  for (let i = 2; i < n; i++) {
-    if (n % i === 0) list.push(i)
-  }
-  console.log(list)
+function solution(N, stages) {
+
 }
 
-console.log(solution(10))
+console.log(solution(13, 17))
