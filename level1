@@ -1,3 +1,6 @@
+// 실패율 (forEach 의 사용법)
+
+
 // 요일 구하기
 
 function solution(a, b) {

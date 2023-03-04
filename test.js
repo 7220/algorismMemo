@@ -1,5 +1,7 @@
-function solution(N, stages) {
-
+function solution(dartResult) {
+  const list = dartResult.split('')
+  console.log(list)
 }
 
-console.log(solution(13, 17))
+
+console.log(solution("1S2D*3T"))
