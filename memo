@@ -1,4 +1,4 @@
-level 1 폰켓몬
+// level 1 폰켓몬
 
 function solution(nums) {
   const a = nums.length / 2
