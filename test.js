@@ -1,6 +1,5 @@
-function solution(n, words) {
+function solution(brown, yellow) {
 
-  
 }
 
 
