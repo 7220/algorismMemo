@@ -1,0 +1,20 @@
+// N개의 최소공배수
+
+function solution(arr) {
+  let result = arr[0]
+  for (let i = 1; i < arr.length; i++) {
+    result = lcm(result, arr[i])
+  }
+  return result
+}
+
+const gcd = (a, b) => {
+  if (b === 0) return a
+  return gcd(b, a % b)
+}
+
+const lcm = (a, b) => (a * b) / gcd(a, b)
+
+// 배열 원소 한 칸씩 밀기
+
+let r = s.slice(i) + s.slice(0, i) //
