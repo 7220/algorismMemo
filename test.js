@@ -1,12 +1,8 @@
-function solution(n, left, right) {
-  const result = []
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-      const n = Math.max(i, j) + 1
-      if (left <= j && j <= right) result.push(n)
-    }
-  } 
-  return result
+function solution(elements) {
+  const list = []
+  const set = new Set()
+  elements.sort((a, b) => a - b)
+  for (let i = 0; i < elements.length; i++)
 }
 
-console.log(solution(3, 2, 5))
+console.log(solution([93, 30, 55], [1, 30, 5]))

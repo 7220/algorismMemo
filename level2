@@ -1,3 +1,21 @@
+// 작업 순서
+
+function solution(progresses, speeds) {
+  const result = []
+  let a = -1
+
+  for (let i = 0; i < progresses.length; i++) {
+    const b = 100 - progresses[i]
+    const day = Math.ceil(b / speeds[i])
+    if (a < day) {
+      a = day
+      result.push(1)
+    }
+    else result[result.length - 1]++
+  }  
+  return result
+}
+
 // N개의 최소공배수
 
 function solution(arr) {
