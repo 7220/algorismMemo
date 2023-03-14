@@ -1,0 +1,8 @@
+// 문자열 큰 수로 합성하여 정렬
+
+function solution(numbers) {
+  const str = numbers.map(n => String(n))
+  const sortedStr = str.sort((a, b) => (b + a) - (a + b)) // 문자열끼리 합쳐보고 - 연산자로 숫자로 인식시켜 내림차순 정렬
+  const result = sortedStr.join('')
+  return result[0] === '0' ? '0' : result 
+}

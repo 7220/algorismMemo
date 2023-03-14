@@ -1,8 +1,9 @@
-function solution(elements) {
-  const list = []
-  const set = new Set()
-  elements.sort((a, b) => a - b)
-  for (let i = 0; i < elements.length; i++)
+function solution(numbers) {
+  const str = numbers.map(n => String(n))
+  const sortedStr = str.sort((a, b) => (b + a) - (a + b))
+  const result = sortedStr.join('')
+  return result[0] === '0' ? '0' : result 
 }
 
-console.log(solution([93, 30, 55], [1, 30, 5]))
+
+console.log(solution([6, 10, 2]))
