@@ -1,5 +1,4 @@
 // 작업 순서
-
 function solution(progresses, speeds) {
   const result = []
   let a = -1

@@ -1,5 +1,4 @@
 //겹치는 배열 원소 찾기
-
 function findMaxDuplicateCount(arr) {
   const count = {};
   let maxCount = 0;
